@@ -1,8 +1,11 @@
 # Design philosophy
 
+**Core look (in the user's own words, 2026-10-17):** a big fan of frosted glassmorphism, the clear-glass look with opacity where you can see into the background, with a nice little motion and bounce on websites and apps, and a nice scroll feel where things wheel up and appear as you scroll. That is the main idea of how they like things to look.
+
 Standing defaults gathered from earlier projects and conversations. The Quartermaster and Draftsman read this on every build. A specific brief or a `Brand/` note overrides it.
 
 ## Look
+- Frosted glass surfaces: translucent panels with a background blur, so the layer behind shows through. Pair with a rich, colourful or blurred background so the glass has something to refract. Keep text contrast real: check it against the blurred backdrop, not the panel alone.
 - Dark backgrounds are the default for screens and for brand marks. Printed pieces may be light, but the mark comes from a dark source.
 - One accent per screen, and one accent word per headline. Not two, not three. A second accent colour is reserved for one special feature, never sprinkled.
 - Flat text. No gradients on text. Metallic or glow treatments belong on a logo or a single hero, not on body copy.
@@ -11,7 +14,8 @@ Standing defaults gathered from earlier projects and conversations. The Quarterm
 - Colour tastes seen so far: earthy dark greens with a lime highlight for scientific work; necrotic green and fel-magic glow with a dark fantasy feel for entertainment and channel branding; red, black, and white with gold for sports.
 
 ## Motion
-- Motion with restraint: fade plus a small rise, slow easing, staggered delays. Motion has a purpose, such as showing a state change, never decoration.
+- Wants a little life: a soft spring or bounce on interactions and entrances, and scroll-triggered reveals where content rises into place as it scrolls into view, with staggered timing.
+- The study of one animation site found "motion with restraint" (fade plus a small rise, slow easing). Treat that as a guide to taste and amount, not a ban on bounce. Motion should still show a state change, not just decorate.
 - Always honor `prefers-reduced-motion`.
 - Calm tools (focus and productivity apps) get the least motion. Public marketing pages can take a few memorable moments, lazy-loaded, because many visitors are on phones.
 - Likes a collapsible icon-rail sidebar: labels blur out first, then the rail narrows (about 0.45 s), with a sliding highlight on the active item.
