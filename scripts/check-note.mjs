@@ -2,7 +2,7 @@
 // Validates taste notes written by the Curator. Usage: node check-note.mjs <note.md> [more.md ...]
 import { readFileSync } from "node:fs";
 
-const KINDS = ["website", "app", "component", "repo", "poster", "screenshot", "other"];
+const KINDS = ["website", "app", "component", "repo", "poster", "screenshot", "font", "other"];
 const LABELS = ["What it is:", "Why I like it:", "Steal this:", "Avoid:", "Observed:"];
 const KEBAB = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 
@@ -43,6 +43,7 @@ function check(file) {
     if (!new RegExp(`^${label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`, "m").test(body))
       errs.push(`missing label "${label}"`);
   }
+  if (fm.kind === "font" && !/^Get it:/m.test(body)) errs.push('kind font needs a "Get it:" line (source and license, or "unknown")');
   const why = body.match(/^Why I like it:[ \t]*(.*)$/m);
   if (why && !why[1].trim()) errs.push('"Why I like it:" is empty (write the user\'s words, or "not given")');
   return errs;

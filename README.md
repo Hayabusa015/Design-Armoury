@@ -26,7 +26,7 @@ Intake works from any directory. Outside a checkout of this repo it keeps its ow
 /design-armory:love https://example.com  the oversized type and the way the nav hides on scroll
 ```
 
-Give it a link (or a screenshot path) and say what you like, typed or dictated. The Curator reads the page, keeps your words as you said them, and files a note in your Obsidian "Design Taste" vault under `Loved/`, checked by `scripts/check-note.mjs`. It tags design qualities, reuses tags you already have, and separates what you said from what it observed. It only reads page text, so it marks anything it could not see as unverified. A github.com link can also go through `/design-armory:intake`.
+Give it a link (or a screenshot path) and say what you like, typed or dictated. The Curator reads the page, keeps your words as you said them, and files a note in your Obsidian "Design Taste" vault under `Loved/` (or `Fonts/` when the link is about typefaces, with where to get each font and its license, or `unknown`), checked by `scripts/check-note.mjs`. It tags design qualities, reuses tags you already have, and separates what you said from what it observed. It only reads page text, so it marks anything it could not see as unverified. TikTok and other pages the fetch tool is blocked from are read through your Apify connector, if you have it (small cost per run). A github.com link can also go through `/design-armory:intake`.
 
 Tell the plugin where your vault is, once per computer:
 

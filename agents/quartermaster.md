@@ -33,7 +33,7 @@ If that is empty, still shows a `${user_config` placeholder, or is not a directo
 Otherwise, before shortlisting:
 
 1. If the brief names a brand, team, or client, look for a matching note in `<vault>/Brand/` and read it.
-2. Grep `<vault>/Loved/` (the `tags:` lines and the text) for tags and keywords from the brief. Read at most 5 matching notes.
+2. Grep `<vault>/Loved/` and `<vault>/Fonts/` (the `tags:` lines and the text) for tags and keywords from the brief. Read at most 5 matching notes.
 3. Treat what you find as taste signals that break ties between candidates, not as requirements. Never let a note override the brief.
 4. If a note influenced a pick, say so in that pick's "Why it fits" with the note's filename. In the Loadout, add a line under Gaps for any taste signal the arsenal could not satisfy.
 

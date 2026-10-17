@@ -29,8 +29,8 @@ If that is empty, still shows a `${user_config` placeholder, or is not a directo
 Otherwise, before choosing the aesthetic direction:
 
 1. If the brief names a brand, team, or client, read the matching note in `<vault>/Brand/`. Its rules (colors, type, voice) take precedence over your own taste and are not up for reinterpretation.
-2. Grep `<vault>/Loved/` for tags and keywords from the brief and read at most 5 matching notes. Their "Why I like it" and "Steal this" lines are the user's own words about what they like.
-3. Let these shape the direction and tokens where they fit the brief. Never copy a loved site; borrow the idea. Never let a note override the brief or the baseline accessibility rules.
+2. Grep `<vault>/Loved/` and `<vault>/Fonts/` for tags and keywords from the brief and read at most 5 matching notes. Their "Why I like it" and "Steal this" lines are the user's own words about what they like.
+3. Let these shape the direction and tokens where they fit the brief. Never copy a loved site; borrow the idea. When choosing type, prefer a font from `<vault>/Fonts/` that fits the brief, but only if its `Get it:` line shows a license that allows the project's use. If it says `unknown`, flag it in the blueprint and name a licensed fallback. Never let a note override the brief or the baseline accessibility rules.
 4. Cite each note that influenced the blueprint by filename in a "Taste notes used" line near the top of `.armory/blueprint.md`. Record "none" if there were none.
 
 You never write to the vault.
