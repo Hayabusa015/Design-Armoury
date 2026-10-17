@@ -1,3 +1,4 @@
 .rejected/
 .DS_Store
 node_modules/
+vault/.obsidian/

@@ -18,9 +18,14 @@ The vault folder: ${user_config.vault_path}
 - No source: ask for one.
 - No words: ask once, "What do you like about it?" If the user is not present, file the note with the reason marked `not given`.
 
-## 2. Check the vault
+## 2. Resolve the vault
 
-If the vault folder above is empty, or still shows a `${user_config` placeholder, ask the user for their vault folder path. Tell them they can save it for this computer with `claude plugin configure design-armory`. Do not guess a path.
+- If the vault folder above is set, use it as `VAULT`. It is the user's own folder; do not run git in it.
+- Otherwise the vault lives in the armory repo, in `vault/`:
+  - If the working directory has `.claude-plugin/plugin.json` named `design-armory`, `ARMORY_ROOT` is the working directory.
+  - Otherwise use the managed checkout at `${CLAUDE_PLUGIN_DATA}/armory`. If it does not exist, clone the `repository` URL from `${CLAUDE_PLUGIN_ROOT}/.claude-plugin/plugin.json` into it.
+  - Run `git pull --ff-only` in `ARMORY_ROOT`. If it fails or the tree has uncommitted changes, stop and tell the user.
+  - `VAULT` is `ARMORY_ROOT/vault`.
 
 ## 3. Get the material
 
@@ -32,12 +37,17 @@ If the vault folder above is empty, or still shows a `${user_config` placeholder
 
 Use the design-armory:curator subagent with the source, any material, the user's words exactly as given, and the vault path. It files fonts in `Fonts/` and everything else in `Loved/`.
 
-## 5. Reply
+## 5. Commit (armory vault only)
 
-Two or three lines: the note's name and where it went, its tags, and anything the Curator could not verify. If the source was a github.com repo, offer to also run `/design-armory:intake <url>` so it joins the arsenal.
+If `VAULT` is `ARMORY_ROOT/vault`, stage `vault/`, commit with a message like `Add taste note: <name>`, `git pull --rebase` if the push is rejected, and push to the default branch. Never force-push. If the push fails, say so and where the commit is. If the user set their own vault folder, skip this step.
+
+## 6. Reply
+
+Two or three lines: the note's name and where it went (and that it was pushed, if it was), its tags, and anything the Curator could not verify. If the source was a github.com repo, offer to also run `/design-armory:intake <url>` so it joins the arsenal.
 
 ## Rules
 
 - Never rewrite the user's meaning. The Curator keeps their words.
 - One question at most.
 - Writing happens only in the vault's `Loved/` and `Fonts/` folders.
+- The armory repo is public. If the user's words contain something private (names of kids, addresses, contact details), leave it out of the note and tell them.

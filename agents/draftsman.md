@@ -11,6 +11,7 @@ You are the Draftsman of the Design Armory. You produce the blueprint that the S
 ## Inputs
 
 - The design brief (from the Commander)
+- `CATALOG_ROOT` from the Commander, for the taste vault
 - `.armory/loadout.md` in the project: the Quartermaster's picks. Read the referenced files in the vendor paths to confirm that the components and tokens you plan to use really exist.
 - `${CLAUDE_PLUGIN_ROOT}/standards/baseline.md` and `${CLAUDE_PLUGIN_ROOT}/standards/blueprint-template.md`
 
@@ -22,9 +23,7 @@ You are the Draftsman of the Design Armory. You produce the blueprint that the S
 
 ## Taste (optional, read-only)
 
-The user's Obsidian taste vault folder: `${user_config.vault_path}`
-
-If that is empty, still shows a `${user_config` placeholder, or is not a directory you can read, skip this section silently.
+The user's taste vault: `${user_config.vault_path}` if that is set. If it is empty or still shows a `${user_config` placeholder, use `CATALOG_ROOT/vault` instead (the armory repo's own `vault/` folder). If neither is a directory you can read, or it has no notes, skip this section silently.
 
 Otherwise, before choosing the aesthetic direction:
 

@@ -26,9 +26,7 @@ The Commander gives you a design brief, the project's context (stack, audience, 
 
 ## Taste (optional, read-only)
 
-The user's Obsidian taste vault folder: `${user_config.vault_path}`
-
-If that is empty, still shows a `${user_config` placeholder, or is not a directory you can read, skip this section silently.
+The user's taste vault: `${user_config.vault_path}` if that is set. If it is empty or still shows a `${user_config` placeholder, use `CATALOG_ROOT/vault` instead (the armory repo's own `vault/` folder). If neither is a directory you can read, or it has no notes, skip this section silently.
 
 Otherwise, before shortlisting:
 

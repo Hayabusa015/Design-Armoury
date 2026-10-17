@@ -25,7 +25,7 @@ Use the design-armory:quartermaster subagent with the brief, the project's stack
 
 ## Stage 2: Draftsman
 
-Use the design-armory:draftsman subagent. It reads the brief and `.armory/loadout.md` and writes `.armory/blueprint.md`.
+Use the design-armory:draftsman subagent with `CATALOG_ROOT`. It reads the brief and `.armory/loadout.md` and writes `.armory/blueprint.md`.
 
 ## Gate: one checkpoint with the user
 

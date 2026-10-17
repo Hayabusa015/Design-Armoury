@@ -28,15 +28,17 @@ Intake works from any directory. Outside a checkout of this repo it keeps its ow
 
 Give it a link (or a screenshot path) and say what you like, typed or dictated. The Curator reads the page, keeps your words as you said them, and files a note in your Obsidian "Design Taste" vault under `Loved/` (or `Fonts/` when the link is about typefaces, with where to get each font and its license, or `unknown`), checked by `scripts/check-note.mjs`. It tags design qualities, reuses tags you already have, and separates what you said from what it observed. It only reads page text, so it marks anything it could not see as unverified. TikTok and other pages the fetch tool is blocked from are read through your Apify connector, if you have it (small cost per run). A github.com link can also go through `/design-armory:intake`.
 
-Tell the plugin where your vault is, once per computer:
+By default your notes are stored in this repo's `vault/` folder and pushed to GitHub automatically, so they follow you to every machine and session. **This repo is public, so do not save private or personal details.** Open `vault/` as an Obsidian vault on any computer to browse them (free).
+
+Or use your own vault folder instead, once per computer:
 
 ```
 claude plugin configure design-armory
 ```
 
-Set `vault_path` to the vault folder (the one with `Loved/`, `Brand/`, `Inbox/`). When it is set, the Quartermaster and Draftsman read the vault (never write) at the start of a build: `Brand/` notes for a named brand, and matching `Loved/` notes as taste signals, cited by filename.
+Set `vault_path` to that folder. Either way, the Quartermaster and Draftsman read the vault (never write) at the start of a build: `Brand/` notes for a named brand, and matching `Loved/` notes as taste signals, cited by filename.
 
-Limits: this runs in Claude Code on a computer where the vault folder exists locally, so a vault that lives only on your phone is out of reach until Obsidian Sync (or another sync) puts it on a PC. The first write outside your project may ask for permission.
+Limits: filing needs a Claude Code session (any device, including a cloud one) that can push to the repo. A vault that lives only on your phone is out of reach. With your own `vault_path` the first write outside your project may ask for permission.
 
 ## Find it again
 
@@ -102,7 +104,8 @@ Entries are marked `surface-vetted` (read from the repo page and files) or `deep
 agents/                           the six subagents
 skills/armory/                    the Commander (build pipeline)
 skills/intake/                    paste-a-repo intake
-skills/love/                      save a loved design to your Obsidian vault
+skills/love/                      save a loved design or font to your taste vault
+vault/                            your taste notes (Loved, Fonts, Brand, Inbox); open as an Obsidian vault
 catalog/<id>.md                   one full entry per repo (the source of truth)
 INDEX.md                          generated from catalog/, do not edit by hand
 scripts/build-index.mjs           validates entries, regenerates INDEX.md (Node, no dependencies)
