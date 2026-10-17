@@ -6,6 +6,7 @@ Standing defaults gathered from earlier projects and conversations. The Quarterm
 
 ## Look
 - Frosted glass surfaces: translucent panels with a background blur, so the layer behind shows through. Pair with a rich, colourful or blurred background so the glass has something to refract. Keep text contrast real: check it against the blurred backdrop, not the panel alone.
+- Glass recipe (from the glassmorphism repos in the catalog): a translucent fill, a backdrop blur, raised saturation, a hairline light border, and a soft shadow, over a colourful or image backdrop. Refraction (edges that bend the backdrop) is the premium version, so offer it where supported and fall back to plain frost in Safari and Firefox. Keep glass to a few key surfaces per screen, and test contrast and speed on a mid-range phone.
 - Dark backgrounds are the default for screens and for brand marks. Printed pieces may be light, but the mark comes from a dark source.
 - One accent per screen, and one accent word per headline. Not two, not three. A second accent colour is reserved for one special feature, never sprinkled.
 - Flat text. No gradients on text. Metallic or glow treatments belong on a logo or a single hero, not on body copy.
@@ -16,7 +17,8 @@ Standing defaults gathered from earlier projects and conversations. The Quarterm
 ## Motion
 - Wants a little life: a soft spring or bounce on interactions and entrances, and scroll-triggered reveals where content rises into place as it scrolls into view, with staggered timing.
 - The study of one animation site found "motion with restraint" (fade plus a small rise, slow easing). Treat that as a guide to taste and amount, not a ban on bounce. Motion should still show a state change, not just decorate.
-- Always honor `prefers-reduced-motion`.
+- Scroll feel: smooth scrolling (Lenis is the catalogued option) plus staggered reveals as sections enter view.
+- Always honor `prefers-reduced-motion`, and offer a solid fallback when the user prefers reduced transparency.
 - Calm tools (focus and productivity apps) get the least motion. Public marketing pages can take a few memorable moments, lazy-loaded, because many visitors are on phones.
 - Likes a collapsible icon-rail sidebar: labels blur out first, then the rail narrows (about 0.45 s), with a sliding highlight on the active item.
 
