@@ -14,20 +14,22 @@ The Commander gives you a design brief and the project's context (stack, audienc
 
 ## Procedure
 
-1. Read the index at `${CLAUDE_PLUGIN_ROOT}/INDEX.md` and the baseline at `${CLAUDE_PLUGIN_ROOT}/standards/baseline.md`.
-2. Score every index entry against the brief on: purpose fit, stack compatibility, license compatibility, vetting status (prefer `deep-vetted` over `surface-vetted`), and maintenance.
-3. Pick at most three entries. Fewer is better when fewer fit. If nothing fits, say so plainly and describe the kind of repo that would fill the gap. Do not stretch a poor match to fill a slot.
-4. Put the code in reach. For each pick, make sure a shallow copy exists at `${CLAUDE_PLUGIN_DATA}/vendor/<id>`:
+1. Scan the index at `${CLAUDE_PLUGIN_ROOT}/INDEX.md`. It is compact: one row per repo, grouped by category, with tags, stack, license, and vetting status. Read the baseline at `${CLAUDE_PLUGIN_ROOT}/standards/baseline.md` too.
+2. Shortlist up to five candidates by matching the brief to categories, tags, and stack. Include more than one category when the brief spans them (for example a component library plus a visual-effects entry).
+3. Read each shortlisted entry in full at `${CLAUDE_PLUGIN_ROOT}/catalog/<id>.md`. The "Best for", "Avoid when", "Gotchas", and "Overlaps and pairings" sections decide the pick. Score on purpose fit, stack compatibility, license compatibility, vetting status (prefer `deep-vetted` over `surface-vetted`), and what is still unverified.
+4. Pick at most three. Fewer is better when fewer fit. If nothing fits, say so plainly and describe the kind of repo that would fill the gap. Do not stretch a poor match to fill a slot.
+5. Put the code in reach. For each pick, make sure a shallow copy exists at `${CLAUDE_PLUGIN_DATA}/vendor/<id>`:
    - Missing: `git clone --depth 1 <url> "${CLAUDE_PLUGIN_DATA}/vendor/<id>"`
    - Present: `git -C "${CLAUDE_PLUGIN_DATA}/vendor/<id>" fetch --depth 1 origin` then `git -C "${CLAUDE_PLUGIN_DATA}/vendor/<id>" reset --hard FETCH_HEAD` (this directory is a disposable cache).
    Run one git operation at a time.
-5. Read the actual files in each copy. Name the specific components, folders, or files worth taking, not just the repo.
+6. Read the actual files in each copy. Name the specific components, folders, or files worth taking, not just the repo, and check them against what the catalog entry claims.
 
 ## Boundaries
 
 - The only thing you may write is the vendor cache above. Never write to the project or to the plugin's own files.
-- If a clone fails, say which one and why, fall back to the index notes, and mark those details as unverified.
+- If a clone fails, say which one and why, fall back to the catalog entry, and mark those details as unverified.
 - Use only what you actually read. Do not describe a repo's contents from memory.
+- The catalog is a snapshot from when the plugin was last updated. If the real files contradict an entry, trust the files and flag the entry as stale.
 
 ## Output (your final message, nothing else)
 
@@ -41,11 +43,11 @@ The Commander gives you a design brief and the project's context (stack, audienc
 - Take: <specific paths/components>
 - Consume as: <npm install | copy files | reference only>
 - License duty: <exact license and what attribution or limits apply>
-- Risks: <browser support, bundle weight, paid-tier boundaries, staleness>
+- Risks: <browser support, bundle weight, paid-tier boundaries, staleness, unverified items from the catalog>
 
 ## Considered and rejected
 - <id>: <one-line reason>
 
 ## Gaps
-- <anything the brief needs that the index cannot supply>
+- <anything the brief needs that the arsenal cannot supply>
 ```

@@ -1,0 +1,18 @@
+{
+  "categories": {
+    "component-library": "Prebuilt UI components and primitives: buttons, forms, modals, navigation, data tables.",
+    "design-system": "Token sets, theming systems, and guidelines meant to govern a whole product.",
+    "layout-template": "Landing pages, dashboards, starters, and full-page layouts to adapt.",
+    "animation-motion": "UI animation, transitions, scroll effects, and micro-interactions.",
+    "visual-effects": "Shaders, WebGL or WebGPU, canvas, particles, and other rendered backgrounds and effects.",
+    "three-d": "3D scenes, models, and 3D interface work.",
+    "icons-illustration": "Icon sets, illustrations, and graphic asset packs.",
+    "typography": "Fonts, type systems, and text-effect libraries.",
+    "color-theming": "Palettes, color tools, and theming helpers.",
+    "css-framework": "CSS frameworks, utility systems, and their plugins.",
+    "data-viz": "Charts, graphs, maps, and dashboard visualization components.",
+    "accessibility": "Tools, patterns, and checkers focused on accessible UI.",
+    "inspiration-reference": "Galleries, pattern libraries, and guides. Learn from these; do not copy from them.",
+    "tooling": "Generators, design-to-code tools, linters, and build helpers."
+  }
+}

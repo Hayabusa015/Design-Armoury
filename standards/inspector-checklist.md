@@ -33,7 +33,7 @@ The Inspector works through this list after the blueprint's own acceptance crite
 
 ## Licensing
 - **LIC-1** Every file copied from the vendor cache has an `ATTRIBUTIONS.md` entry.
-- **LIC-2** Each entry's license matches the one recorded in `INDEX.md`, and original license headers are intact.
+- **LIC-2** Each entry's license matches the one recorded in the repo's `catalog/` entry, and original license headers are intact.
 - **LIC-3** No paid-tier, brand, or trademarked assets are present.
 
 ## Verdict rules
