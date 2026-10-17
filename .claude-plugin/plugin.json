@@ -1,0 +1,12 @@
+{
+  "name": "design-armory",
+  "displayName": "Design Armory",
+  "description": "A curated arsenal of UI design repos plus a crew of agents (Commander, Quartermaster, Draftsman, Smith, Inspector, Appraiser) that pick the right resources, blueprint the UI, build it, and audit it.",
+  "author": {
+    "name": "Hayabusa015",
+    "url": "https://github.com/Hayabusa015"
+  },
+  "homepage": "https://github.com/Hayabusa015/Design-Armoury",
+  "repository": "https://github.com/Hayabusa015/Design-Armoury",
+  "keywords": ["design", "ui", "frontend", "design-system", "agents"]
+}

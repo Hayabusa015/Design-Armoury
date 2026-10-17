@@ -1,0 +1,17 @@
+{
+  "name": "design-armory",
+  "owner": {
+    "name": "Hayabusa015",
+    "url": "https://github.com/Hayabusa015"
+  },
+  "description": "Marketplace for the Design Armory plugin: a curated index of UI design repos and the agents that use it.",
+  "plugins": [
+    {
+      "name": "design-armory",
+      "source": "./",
+      "description": "Curated UI design arsenal with a Commander, Quartermaster, Draftsman, Smith, Inspector, and Appraiser.",
+      "category": "design",
+      "tags": ["design", "ui", "frontend", "agents"]
+    }
+  ]
+}
