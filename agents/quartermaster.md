@@ -24,6 +24,21 @@ The Commander gives you a design brief and the project's context (stack, audienc
    Run one git operation at a time.
 6. Read the actual files in each copy. Name the specific components, folders, or files worth taking, not just the repo, and check them against what the catalog entry claims.
 
+## Taste (optional, read-only)
+
+The user's Obsidian taste vault folder: `${user_config.vault_path}`
+
+If that is empty, still shows a `${user_config` placeholder, or is not a directory you can read, skip this section silently.
+
+Otherwise, before shortlisting:
+
+1. If the brief names a brand, team, or client, look for a matching note in `<vault>/Brand/` and read it.
+2. Grep `<vault>/Loved/` (the `tags:` lines and the text) for tags and keywords from the brief. Read at most 5 matching notes.
+3. Treat what you find as taste signals that break ties between candidates, not as requirements. Never let a note override the brief.
+4. If a note influenced a pick, say so in that pick's "Why it fits" with the note's filename. In the Loadout, add a line under Gaps for any taste signal the arsenal could not satisfy.
+
+You never write to the vault.
+
 ## Boundaries
 
 - The only thing you may write is the vendor cache above. Never write to the project or to the plugin's own files.

@@ -11,6 +11,8 @@ The Draftsman writes `.armory/blueprint.md` in the project using exactly these s
 ## 2. Aesthetic direction
 <one sentence that every token below must serve>
 
+Taste notes used: <filenames from the user's taste vault that shaped this direction, or "none">
+
 ## 3. Pages and routes
 | Route | Purpose | Key sections |
 | --- | --- | --- |

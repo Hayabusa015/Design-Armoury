@@ -20,6 +20,24 @@ Then the index is regenerated and validated by `scripts/build-index.mjs`, and th
 
 Intake works from any directory. Outside a checkout of this repo it keeps its own managed checkout in the plugin's data folder.
 
+## Save a design you love
+
+```
+/design-armory:love https://example.com  the oversized type and the way the nav hides on scroll
+```
+
+Give it a link (or a screenshot path) and say what you like, typed or dictated. The Curator reads the page, keeps your words as you said them, and files a note in your Obsidian "Design Taste" vault under `Loved/`, checked by `scripts/check-note.mjs`. It tags design qualities, reuses tags you already have, and separates what you said from what it observed. It only reads page text, so it marks anything it could not see as unverified. A github.com link can also go through `/design-armory:intake`.
+
+Tell the plugin where your vault is, once per computer:
+
+```
+claude plugin configure design-armory
+```
+
+Set `vault_path` to the vault folder (the one with `Loved/`, `Brand/`, `Inbox/`). When it is set, the Quartermaster and Draftsman read the vault (never write) at the start of a build: `Brand/` notes for a named brand, and matching `Loved/` notes as taste signals, cited by filename.
+
+Limits: this runs in Claude Code on a computer where the vault folder exists locally, so a vault that lives only on your phone is out of reach until Obsidian Sync (or another sync) puts it on a PC. The first write outside your project may ask for permission.
+
 ## Find it again
 
 `INDEX.md` is a generated, compact table grouped by category, with tags, stack, license, and vetting status. When a build starts, the Quartermaster scans it, shortlists candidates, reads only those full entries, then shallow-clones just the picked repos and reads the real files. So the arsenal can grow large without every build paying for all of it.
@@ -34,6 +52,7 @@ Intake works from any directory. Outside a checkout of this repo it keeps its ow
 | **Smith** | Builds in your project from the blueprint and nothing else | Yes, in the project only |
 | **Inspector** | Audits the build for blueprint fidelity, accessibility, responsiveness, performance, and licensing | No |
 | **Appraiser** (`/design-armory:intake`) | Learns, categorizes, and files a new repo | Catalog only |
+| **Curator** (`/design-armory:love`) | Files a design you love, in your words, into your Obsidian vault | Vault `Loved/` only |
 
 Build flow: Quartermaster, then Draftsman, then one checkpoint with you, then Smith, then Inspector. A failed audit goes back to the Smith for at most two rounds.
 
@@ -76,12 +95,14 @@ Entries are marked `surface-vetted` (read from the repo page and files) or `deep
 ```
 .claude-plugin/plugin.json        plugin manifest
 .claude-plugin/marketplace.json   makes this repo installable as a marketplace
-agents/                           the five subagents
+agents/                           the six subagents
 skills/armory/                    the Commander (build pipeline)
 skills/intake/                    paste-a-repo intake
+skills/love/                      save a loved design to your Obsidian vault
 catalog/<id>.md                   one full entry per repo (the source of truth)
 INDEX.md                          generated from catalog/, do not edit by hand
 scripts/build-index.mjs           validates entries, regenerates INDEX.md (Node, no dependencies)
+scripts/check-note.mjs            validates taste notes the Curator writes
 standards/                        baseline rules, taxonomy.json, catalog entry template, blueprint template, inspector checklist
 ```
 

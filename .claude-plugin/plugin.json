@@ -1,12 +1,20 @@
 {
   "name": "design-armory",
   "displayName": "Design Armory",
-  "description": "A curated arsenal of UI design repos plus a crew of agents (Commander, Quartermaster, Draftsman, Smith, Inspector, Appraiser) that pick the right resources, blueprint the UI, build it, and audit it.",
+  "description": "A curated arsenal of UI design repos plus a crew of agents (Commander, Quartermaster, Draftsman, Smith, Inspector, Appraiser, Curator) that pick the right resources, blueprint the UI, build it, audit it, and learn your taste.",
   "author": {
     "name": "Hayabusa015",
     "url": "https://github.com/Hayabusa015"
   },
   "homepage": "https://github.com/Hayabusa015/Design-Armoury",
   "repository": "https://github.com/Hayabusa015/Design-Armoury",
-  "keywords": ["design", "ui", "frontend", "design-system", "agents"]
+  "keywords": ["design", "ui", "frontend", "design-system", "agents", "obsidian"],
+  "userConfig": {
+    "vault_path": {
+      "type": "directory",
+      "title": "Design Taste vault",
+      "description": "The folder of your Obsidian vault (the one containing Loved/, Brand/, and Inbox/). Set it per computer. Leave it blank on machines that do not have the vault.",
+      "required": false
+    }
+  }
 }
