@@ -30,6 +30,7 @@ The user's taste vault: `${user_config.vault_path}` if that is set. If it is emp
 
 Otherwise, before shortlisting:
 
+0. Read `<vault>/Philosophy.md` if it exists. It holds the user's standing design defaults (dark by default, one accent, restrained motion, print and accessibility rules). A brief or a `Brand/` note overrides it.
 1. If the brief names a brand, team, or client, look for a matching note in `<vault>/Brand/` and read it.
 2. Grep `<vault>/Loved/` and `<vault>/Fonts/` (the `tags:` lines and the text) for tags and keywords from the brief. Read at most 5 matching notes.
 3. Treat what you find as taste signals that break ties between candidates, not as requirements. Never let a note override the brief.

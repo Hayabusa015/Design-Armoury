@@ -28,7 +28,7 @@ Intake works from any directory. Outside a checkout of this repo it keeps its ow
 
 Give it a link (or a screenshot path) and say what you like, typed or dictated. The Curator reads the page, keeps your words as you said them, and files a note in your Obsidian "Design Taste" vault under `Loved/` (or `Fonts/` when the link is about typefaces, with where to get each font and its license, or `unknown`), checked by `scripts/check-note.mjs`. It tags design qualities, reuses tags you already have, and separates what you said from what it observed. It only reads page text, so it marks anything it could not see as unverified. TikTok and other pages the fetch tool is blocked from are read through your Apify connector, if you have it (small cost per run). A github.com link can also go through `/design-armory:intake`.
 
-By default your notes are stored in this repo's `vault/` folder and pushed to GitHub automatically, so they follow you to every machine and session. **This repo is public, so do not save private or personal details.** Open `vault/` as an Obsidian vault on any computer to browse them (free).
+By default your notes are stored in this repo's `vault/` folder and pushed to GitHub automatically, so they follow you to every machine and session. **This repo is public, so do not save private or personal details.** Open `vault/` as an Obsidian vault on any computer to browse them (free). `vault/Philosophy.md` holds your standing design defaults, which every build reads first.
 
 Or use your own vault folder instead, once per computer:
 

@@ -27,6 +27,7 @@ The user's taste vault: `${user_config.vault_path}` if that is set. If it is emp
 
 Otherwise, before choosing the aesthetic direction:
 
+0. Read `<vault>/Philosophy.md` if it exists. It holds the user's standing design defaults (dark by default, one accent, restrained motion, print and accessibility rules). A brief or a `Brand/` note overrides it.
 1. If the brief names a brand, team, or client, read the matching note in `<vault>/Brand/`. Its rules (colors, type, voice) take precedence over your own taste and are not up for reinterpretation.
 2. Grep `<vault>/Loved/` and `<vault>/Fonts/` for tags and keywords from the brief and read at most 5 matching notes. Their "Why I like it" and "Steal this" lines are the user's own words about what they like.
 3. Let these shape the direction and tokens where they fit the brief. Never copy a loved site; borrow the idea. When choosing type, prefer a font from `<vault>/Fonts/` that fits the brief, but only if its `Get it:` line shows a license that allows the project's use. If it says `unknown`, flag it in the blueprint and name a licensed fallback. Never let a note override the brief or the baseline accessibility rules.
