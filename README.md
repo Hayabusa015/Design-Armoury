@@ -75,9 +75,13 @@ Working files go in `.armory/` in your project. `blueprint.md` is worth committi
 
 Restart the session afterwards.
 
+## New repos show up in builds immediately
+
+Each `/design-armory:armory` run first pulls the live catalog from GitHub into a managed checkout, so a repo added with `/design-armory:intake` is available to the next build on any machine, with no plugin update. If the machine is offline, the build falls back to the installed copy and says so.
+
 ## Updating
 
-The plugin has no `version` in its manifest on purpose, so every push to `main` counts as a new version. Installed copies are snapshots and do not change until updated, so new catalog entries reach a machine only after:
+The plugin has no `version` in its manifest on purpose, so every push to `main` counts as a new version. Installed copies are snapshots and do not change until updated, so changes to the agents, skills, and standards reach a machine only after (catalog entries do not wait for this; see above):
 
 ```
 claude plugin marketplace update design-armory

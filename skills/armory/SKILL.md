@@ -12,11 +12,16 @@ The brief: $ARGUMENTS
 
 1. Confirm the working directory is the project being built. If `.claude-plugin/plugin.json` exists here with the name `design-armory`, this is the armory repo itself: stop and tell the user to run `/design-armory:armory` from their project, or use `/design-armory:intake` to add repos.
 2. If the brief is empty or too thin to design from, ask once, in one message, at most three questions (audience, platform and stack, look and feel or references). If the user is not present, state your assumptions at the top of your work and continue.
-3. Create `.armory/` in the project and set up a task list for the stages below.
+3. Resolve `CATALOG_ROOT`, the live catalog. The installed plugin copy is a snapshot that can be behind repos the user added recently, so do not rely on it:
+   - Use the managed checkout at `${CLAUDE_PLUGIN_DATA}/armory`. If it does not exist, clone the `repository` URL from `${CLAUDE_PLUGIN_ROOT}/.claude-plugin/plugin.json` into it (shallow is fine).
+   - Otherwise run `git pull --ff-only` there.
+   - If the clone or pull fails (offline, diverged, uncommitted changes), fall back to `${CLAUDE_PLUGIN_ROOT}` as `CATALOG_ROOT` and tell the user in one line that the catalog may be missing their newest repos.
+   - Report in one line how many repos `CATALOG_ROOT/INDEX.md` lists.
+4. Create `.armory/` in the project and set up a task list for the stages below.
 
 ## Stage 1: Quartermaster
 
-Use the design-armory:quartermaster subagent with the brief and the project's stack. Save its returned loadout to `.armory/loadout.md`. If it reports that nothing in the index fits, tell the user which kind of repo is missing and offer to proceed with a custom build or pause so they can add one with `/design-armory:intake`.
+Use the design-armory:quartermaster subagent with the brief, the project's stack, and `CATALOG_ROOT`. Save its returned loadout to `.armory/loadout.md`. If it reports that nothing in the index fits, tell the user which kind of repo is missing and offer to proceed with a custom build or pause so they can add one with `/design-armory:intake`.
 
 ## Stage 2: Draftsman
 
@@ -32,7 +37,7 @@ Use the design-armory:smith subagent. For a small build, use one Smith. For a mu
 
 ## Stage 4: Inspector
 
-Use the design-armory:inspector subagent with the blueprint and the list of changed files. Save its report to `.armory/inspection.md`.
+Use the design-armory:inspector subagent with the blueprint, the list of changed files, and `CATALOG_ROOT`. Save its report to `.armory/inspection.md`.
 
 ## Stage 5: Fix loop
 
