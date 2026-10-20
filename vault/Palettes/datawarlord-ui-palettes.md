@@ -9,7 +9,7 @@ tags: [palette, dark-ui, glow, high-contrast, green, product-palettes]
 
 What it is: A ten-slide TikTok carousel of four-colour palettes, each shown on a glowing, glass-like website or app mockup for a product type. The caption also lists palette websites: Coolors (generate palettes), Adobe Color (explore and create colour themes), Color Hunt (curated palettes), and more cut off in the capture.
 
-Why I like it: not given. Saved on request "for some general ideas".
+Why I like it: I like all of them. It just depends on what I'm building. Saved for some general ideas.
 
 Steal this:
 - Each palette is four colours: one bright accent, one near-black background, one near-white text or surface, and one supporting tone. A usable pattern for any new project. (observed)
