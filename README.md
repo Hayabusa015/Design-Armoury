@@ -26,7 +26,7 @@ Intake works from any directory. Outside a checkout of this repo it keeps its ow
 /design-armory:love https://example.com  the oversized type and the way the nav hides on scroll
 ```
 
-Give it a link (or a screenshot path) and say what you like, typed or dictated. The Curator reads the page, keeps your words as you said them, and files a note in your Obsidian "Design Taste" vault under `Loved/` (or `Fonts/` when the link is about typefaces, with where to get each font and its license, or `unknown`), checked by `scripts/check-note.mjs`. It tags design qualities, reuses tags you already have, and separates what you said from what it observed. It only reads page text, so it marks anything it could not see as unverified. TikTok and other pages the fetch tool is blocked from are read through your Apify connector, if you have it (small cost per run). A github.com link can also go through `/design-armory:intake`.
+Give it a link (or a screenshot path) and say what you like, typed or dictated. The Curator reads the page, keeps your words as you said them, and files a note in your Obsidian "Design Taste" vault under `Loved/` (or `Palettes/` when it is about colour palettes, with the hex values; or `Fonts/` when the link is about typefaces, with where to get each font and its license, or `unknown`), checked by `scripts/check-note.mjs`. It tags design qualities, reuses tags you already have, and separates what you said from what it observed. It only reads page text, so it marks anything it could not see as unverified. TikTok and other pages the fetch tool is blocked from are read through your Apify connector, if you have it (small cost per run). A github.com link can also go through `/design-armory:intake`.
 
 By default your notes are stored in this repo's `vault/` folder and pushed to GitHub automatically, so they follow you to every machine and session. **This repo is public, so do not save private or personal details.** Open `vault/` as an Obsidian vault on any computer to browse them (free). `vault/Philosophy.md` holds your standing design defaults, which every build reads first.
 
@@ -105,7 +105,7 @@ agents/                           the six subagents
 skills/armory/                    the Commander (build pipeline)
 skills/intake/                    paste-a-repo intake
 skills/love/                      save a loved design or font to your taste vault
-vault/                            your taste notes (Loved, Fonts, Brand, Inbox); open as an Obsidian vault
+vault/                            your taste notes (Loved, Fonts, Palettes, Brand, Inbox); open as an Obsidian vault
 catalog/<id>.md                   one full entry per repo (the source of truth)
 INDEX.md                          generated from catalog/, do not edit by hand
 scripts/build-index.mjs           validates entries, regenerates INDEX.md (Node, no dependencies)

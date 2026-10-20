@@ -1,6 +1,6 @@
 ---
 name: love
-description: Save a design or font you love to your Obsidian taste vault. Give a link or screenshot and say what you like about it.
+description: Save a design, font, or colour palette you love to your Obsidian taste vault. Give a link or screenshot and say what you like about it.
 when_to_use: The user shares a link or screenshot of a design or font (site, app, component, poster, typeface list) and says what they like about it, or asks to save, remember, or file it as a design they love.
 argument-hint: "[link or image path] [what you like about it]"
 ---
@@ -35,7 +35,7 @@ The vault folder: ${user_config.vault_path}
 
 ## 4. File it
 
-Use the design-armory:curator subagent with the source, any material, the user's words exactly as given, and the vault path. It files fonts in `Fonts/` and everything else in `Loved/`.
+Use the design-armory:curator subagent with the source, any material, the user's words exactly as given, and the vault path. It files fonts in `Fonts/`, colour palettes in `Palettes/`, and everything else in `Loved/`.
 
 ## 5. Commit (armory vault only)
 
@@ -49,5 +49,5 @@ Two or three lines: the note's name and where it went (and that it was pushed, i
 
 - Never rewrite the user's meaning. The Curator keeps their words.
 - One question at most.
-- Writing happens only in the vault's `Loved/` and `Fonts/` folders.
+- Writing happens only in the vault's `Loved/`, `Fonts/`, and `Palettes/` folders.
 - The armory repo is public. If the user's words contain something private (names of kids, addresses, contact details), leave it out of the note and tell them.

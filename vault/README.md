@@ -4,6 +4,7 @@ Open this folder as an Obsidian vault. Notes are filed here by `/design-armory:l
 
 - `Loved/` designs you love, in your words
 - `Fonts/` fonts you love, with where to get each and its license
+- `Palettes/` colour palettes you saved for ideas, with hex values
 - `Brand/` brand rules for a team or client (the Draftsman treats these as binding)
 - `Inbox/` anything unsorted
 
