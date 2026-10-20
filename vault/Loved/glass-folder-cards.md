@@ -19,7 +19,7 @@ Steal this:
 - Light "milk glass" and dark "smoked glass" tones from one prop. (observed)
 
 Avoid:
-- Do not copy the code into a build until the origin and license are known. None was given with the attachment.
+- Before copying the code into a build, confirm the exact 21st.dev page. The closest match found is "Glassmorphism Folder Cards" by Kedhareswer Naidu (https://21st.dev/@kedhareswer/components/glass-folder-cards), whose page lists License: mit. I could not confirm it is the same code as the attachment (the title differs and the page text did not mention the artwork presets). If it is, MIT applies and 21st.dev's terms ask for a visible link back to the original component page when it is copied elsewhere. Their demos and media are not included.
 - It paints generated artwork into canvases (spread over frames and cached); with many folders on one page, check performance on a mid-range phone.
 - Backdrop blur needs a backdrop worth blurring; check text contrast on the glass.
 
