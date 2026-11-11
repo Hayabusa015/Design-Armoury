@@ -33,6 +33,36 @@ Standing defaults gathered from earlier projects and conversations. The Quarterm
 - Prefers pinned, aged dependency versions over the newest release.
 - New libraries are adopted one component at a time and mapped onto the existing theme tokens, never allowed to override them.
 
+## Seen in your own built work
+Read on 2026-11-11 from the code and design rules of the user's teaching-workspace app and its document system. These are things the user built or approved, not things they said in so many words, so treat them as strong signals and let a brief override them.
+
+### Dark screen recipe
+- One dark neutral is the base, and every surface (page, rail, panel, raised, input) is a stated mix of it with white or black. The ladder stays on one grey axis and never drifts.
+- Shadows are darker than the surface they fall on, not a neutral grey. Each panel gets a hairline highlight along its top edge so it reads as lit.
+- Interactive surfaces light up with a glow in the accent colour, defined once at three strengths (soft, mid, hot), so every hover and focus lights the same way.
+- One piece of atmosphere per screen: a wide, very faint accent bloom behind the workspace, fixed so it does not travel with the scroll. This is also the backdrop the glass refracts.
+- Corners are soft, not pill-shaped: about 8, 13, and 18px for small, standard, and large.
+
+### Colour discipline
+- A hex value is written in one token file and nowhere else. Stylesheets hold no colour literal; tints, rings, and glows are mixed from the tokens.
+- Every colour is stored with its measured contrast on the light and dark grounds and its greyscale value. A colour without measurements is treated as a defect.
+- A bright display colour is not a text colour. Each accent has a darker text-safe partner for type on a light ground; the bright one is for fills, rules, chips, and type on dark.
+- The accent means something: it marks what an item belongs to and is never decoration. Warning, caution, and success colours keep their meaning even when they are not in the palette.
+
+### Type details
+- Small uppercase labels above headings, in the condensed face with wide tracking. Headings are heavy with slightly tight tracking.
+- The open stand-in for Trade Gothic Next is Archivo with Archivo Narrow (both OFL). See `Fonts/trade-gothic-next.md` and the `archivo` catalog entry.
+
+### Motion numbers
+- Hover and focus changes run about 180 to 220ms on one shared ease-out curve. Under reduced motion every duration collapses to nothing.
+
+### What "good" means
+- The failure to avoid is "generic with no soul": work that looks templated or machine-made. The test is whether it looks like something a specific person made on purpose for a specific audience.
+- Every visual element has a job: hierarchy, navigation, explanation, emphasis, identity, or comprehension. Filling an empty space is not a job.
+- Density is clean and moderately full. "Beautiful but useless" and "a textbook page pasted in" both fail.
+- Show the real thing: galleries and previews use real rendered output, not mock-ups.
+- Anything a viewer reads as fact (numbers, labels, diagrams) is built by hand. Generated imagery is for atmosphere only.
+
 ## Process
 - Wants the real reference reviewed (screenshots, recordings, the actual page) rather than guessed at.
 - Paid design products and brands are studied for principles only. Nothing paid or trademarked is copied.

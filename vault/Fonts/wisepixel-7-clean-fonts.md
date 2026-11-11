@@ -36,3 +36,9 @@ Get it: (looked up 2026-10-17)
 - Qurova: Prioritype. The free download is a demo, personal use only. The full version for commercial use is sold at prioritypeco.com.
 
 Observed: Read from the slide images. Font names are as shown on the slides; the post gives no download links, designers, or licenses. The post itself gives no download links, designers, or licenses; the Get it lines come from a separate lookup.
+
+## Another take (2026-11-11)
+Licences confirmed for two of the seven, read from each font's own repo (`OFL.txt`) on 2026-11-11. Both are now in the catalog.
+- Urbanist: SIL Open Font License 1.1, free for commercial use and self-hosting. https://github.com/coreyhu/Urbanist (catalog `urbanist`). Nine weights with italics.
+- Outfit: SIL Open Font License 1.1, free for commercial use and self-hosting. https://github.com/Outfitio/Outfit-Fonts (catalog `outfit`). Nine weights, no italics.
+The other five are unchanged: still unknown or paid, as listed under Get it.

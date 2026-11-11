@@ -20,3 +20,6 @@ Avoid:
 Get it: Trade Gothic Next is a commercial family. Where it is licensed, and whether the existing licence covers web use, was not checked here. Treat as unknown before using it in a web build, and name a licensed fallback in the blueprint.
 
 Observed: Taken from earlier conversations only. Nothing about the font was looked up or rendered today.
+
+## Another take (2026-11-11)
+Licensed fallback, found in the user's own document system: Archivo with Archivo Narrow, both SIL Open Font License 1.1, named after Trade Gothic Next in every font stack there. Archivo's licence was read from its repo on 2026-11-11 (`OFL.txt`); it is filed in the catalog as `archivo`. That system treats Trade Gothic Next as Monotype-licensed and never commits its files. Archivo Narrow's licence was taken from that system's records and was not re-read today.

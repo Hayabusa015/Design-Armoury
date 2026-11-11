@@ -27,6 +27,14 @@ The Inspector works through this list after the blueprint's own acceptance crite
 - **PERF-2** GPU or canvas effects have a static fallback, pause offscreen, and stop under reduced motion.
 - **PERF-3** No obviously heavy dependency was added for a small gain. Note bundle impact if it can be measured.
 
+## Glass and motion
+Mark these "not applicable" when the build has no translucent surfaces or no motion.
+- **GLASS-1** Text on every glass surface meets contrast against the busiest backdrop that can sit behind it.
+- **GLASS-2** Every glass surface has a solid fallback where `backdrop-filter` is unsupported and under `prefers-reduced-transparency`.
+- **GLASS-3** Glass is limited to the surfaces the blueprint names, with refraction on one hero element at most, and no animated blur radius.
+- **MOT-1** Durations are within the baseline ranges, spring overshoot is small, and no text bounces while being read.
+- **MOT-2** Scroll-revealed content is present and readable with scripts off or failed, and reveals play once.
+
 ## Code health
 - **CODE-1** Build, lint, and type check pass (or the project has none, and that is noted).
 - **CODE-2** No secrets, no dead copied code, no leftover debug output.
@@ -38,6 +46,6 @@ The Inspector works through this list after the blueprint's own acceptance crite
 
 ## Verdict rules
 - Any blocker, or any failed acceptance criterion: FAIL.
-- Majors with no blockers: PASS WITH NOTES, but only if none concern accessibility or licensing. Those are FAIL.
+- Majors with no blockers: PASS WITH NOTES, but only if none concern accessibility (including GLASS-1 and GLASS-2) or licensing. Those are FAIL.
 - Otherwise: PASS.
 - Always list what was not verified.

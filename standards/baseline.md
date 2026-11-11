@@ -33,8 +33,21 @@ These apply to every Design Armory build. The Draftsman writes them into the blu
 
 ## Motion
 
-- Motion has a purpose: orientation, feedback, or emphasis. UI transitions run 150 to 300ms.
+- Motion has a purpose: orientation, feedback, or emphasis. UI transitions (hover, focus, press) run 150 to 300ms.
+- Larger moves may run longer, up to about 500ms: an entrance, a scroll reveal, a panel or rail changing size.
+- Spring or bounce is allowed on interactions and entrances. Keep the overshoot small, settle within the duration above, and never bounce text that is being read.
+- Scroll reveals play once, as the element enters view. Content must be present and readable if the script never runs.
 - No motion that blocks reading or input.
+
+## Glass and transparency
+
+Applies whenever a build uses translucent or blurred surfaces.
+
+- Check text contrast on glass against the busiest part of the backdrop that can sit behind it, not against the panel fill alone. If it cannot pass, raise the fill opacity or move the text off the glass.
+- Glass needs a backdrop worth blurring: a colourful, image, or gradient layer. Glass over a flat colour is a plain panel and should be built as one.
+- A few key surfaces per screen are glass, not every card. Refraction or liquid-glass effects go on one hero element at most.
+- Every glass surface has a solid fallback: where `backdrop-filter` is unsupported, and where the visitor asks for reduced transparency (`prefers-reduced-transparency`, in browsers that support it).
+- Blur is costly. Do not animate the blur radius, avoid large stacked blurred layers, and check scrolling on a mid-range phone.
 
 ## Craft
 
